@@ -21,8 +21,9 @@
                 <td>{{ category.name }}</td>
                 <td>{{ category.slug }}</td>
                 <td>
-                    <a href="{{ path('app_category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('app_category_edit', {'id': category.id}) }}">edit</a>
+                    <a href="{{ path('app_category_show', {'id': category.id}) }}" class="text-primary">show</a>
+                    <a href="{{ path('app_category_edit', {'id': category.id}) }}" class="text-warning">edit</a>
+                    <a href="{{ path('app_category_delete', {'id': category.id}) }}" class="text-danger">delete</a>
                 </td>
             </tr>
         {% else %}
@@ -34,4 +35,5 @@
     </table>
 
     <a href="{{ path('app_category_new') }}">Create new</a>
+    <a href="{{ path('app_home') }}">Return</a>
 {% endblock %}

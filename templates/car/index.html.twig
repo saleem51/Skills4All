@@ -27,9 +27,9 @@
                 <td>{{ car.cost }}</td>
                 <td>{{ car.slug }}</td>
                 <td>
-                    <a href="{{ path('app_car_show', {'id': car.id}) }}"><i data-feather="book"></i></a>
-                    <a href="{{ path('app_car_edit', {'id': car.id}) }}"><i data-feather="edit"></i></a>
-                    <a href="{{ path('app_car_delete', {'id': car.id}) }}"><i data-feather="trash-2"></i>></a>
+                    <a href="{{ path('app_car_show', {'id': car.id}) }}" class="text-primary">show</a>
+                    <a href="{{ path('app_car_edit', {'id': car.id}) }}" class="text-warning">edit</a>
+                    <a href="{{ path('app_car_delete', {'id': car.id}) }}" class="text-danger">delete</a>
                 </td>
             </tr>
         {% else %}
@@ -39,6 +39,12 @@
         {% endfor %}
         </tbody>
     </table>
+    <div class="paginator mt-4">
+        {{ knp_pagination_render(cars) }}
+    </div>
 
     <a href="{{ path('app_car_new') }}">Create new</a>
+    <a href="{{ path('app_home') }}">Return</a>
+
+
 {% endblock %}

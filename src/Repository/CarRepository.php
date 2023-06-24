@@ -42,6 +42,20 @@ class CarRepository extends ServiceEntityRepository
         }
     }
 
+    public function findPagination(int $page): PaginationInterface
+    {
+        $query = $this->createQueryBuilder("p")
+                      ->select('p');
+
+        $query = $query->getQuery();
+
+        return $this->paginator->paginate(
+            $query,
+            $page,
+            10
+        );
+    }
+
     /**
      * @return Car[]
      */

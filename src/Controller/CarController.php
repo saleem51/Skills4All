@@ -13,11 +13,16 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/admin')]
 class CarController extends AbstractController
 {
+
+    public function __construct(int $page = 1){}
+
     #[Route('/', name: 'app_car_index', methods: ['GET'])]
-    public function index(CarRepository $carRepository): Response
+    public function index(CarRepository $carRepository, Request $request): Response
     {
+        $page = $request->get('page', 1);
+
         return $this->render('car/index.html.twig', [
-            'cars' => $carRepository->findAll(),
+            'cars' => $carRepository->findPagination($page),
         ]);
     }
 
