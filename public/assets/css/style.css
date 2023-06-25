@@ -8,3 +8,23 @@
     display: flex;
     justify-content: center;
 }
+
+.card-border{
+    color: #4B515D;
+    border-radius: 35px;
+}
+
+#degrees, #hourDegrees{
+    color: #1C2331;
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+#visibility, .icon-color{
+    color: #868B94;
+}
+
+.block-text-size{
+  font-size: 1rem;
+}
+

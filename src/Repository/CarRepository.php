@@ -42,6 +42,7 @@ class CarRepository extends ServiceEntityRepository
         }
     }
 
+    //requête queryBuilder pour récupérer les donnée avec la pagination
     public function findPagination(int $page): PaginationInterface
     {
         $query = $this->createQueryBuilder("p")
@@ -59,6 +60,7 @@ class CarRepository extends ServiceEntityRepository
     /**
      * @return Car[]
      */
+    //requête queryBuilder pour faire les recherches avec les filtres
     public function findSearch(SearchData $search): PaginationInterface
     {
         $query = $this->createQueryBuilder('p')

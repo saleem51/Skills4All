@@ -4,6 +4,7 @@ namespace App\data;
 
 class SearchData
 {
+    //Class SearchData pour la mise en place des filtres par nom et par catégories
 
     public int $page = 1;
 

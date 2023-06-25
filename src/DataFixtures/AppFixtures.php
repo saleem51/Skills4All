@@ -18,12 +18,14 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
+        //Ajout des providers (utilisation des provider FakeCar et Prices pour des données plus réalistes
         $faker = \Faker\Factory::create('fr_FR');
         $faker->addProvider(new Prices($faker));
         $faker->addProvider(new FakeCar($faker));
 
         for($c = 0 ; $c < 7 ; $c++)
         {
+            //Création des catégories
             $category = new Category();
             $category->setName($faker->vehicleBrand)
                      ->setSlug(strtolower($this->slugger->slug($category->getName())));
@@ -32,6 +34,7 @@ class AppFixtures extends Fixture
 
             for ($i = 0; $i < 20; $i++) {
 
+                //Création des voitures
                 $car = new Car();
                 $car->setName($faker->vehicleModel)
                     ->setCost($faker->price($min = 12000, $max = 25000, false, false))

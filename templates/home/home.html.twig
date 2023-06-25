@@ -7,7 +7,8 @@
     <div class="manage text-center mt-4 mb-2">
         <a class="btn btn-primary" href="{{ path('app_car_index') }}">Manage cars</a>
         <a class="btn btn-success" href="{{ path('app_category_index') }}">Manage categories</a>
-    </div>
+        {% include 'includes/_weather.html.twig' %}
+        </div>
         <div class="row mt-4">
             <div class="col-md-3">
                 {%  include 'includes/_form_search.html.twig'  with {form:form} only %}
@@ -28,7 +29,7 @@
                 </div>
             </div>
         </div>
-
+        <!--Pagination-->
         <div class="paginator mt-4">
             {{ knp_pagination_render(cars) }}
         </div>
