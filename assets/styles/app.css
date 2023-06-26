@@ -1,3 +1,5 @@
+
+
 .filter{
     display: block;
     position: sticky;
@@ -25,6 +27,5 @@
 }
 
 .block-text-size{
-  font-size: 1rem;
+    font-size: 1rem;
 }
-
