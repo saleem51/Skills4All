@@ -45,7 +45,7 @@ const API_KEY = process.env.API_KEY;
                 weather.hourly.time.forEach( (time, index) => {
                     now = new Date();
                     now.setMinutes(0);
-                    let formatTime = now.toISOString().replace(/.\d+Z$/g, "Z").slice(0,  - 4);
+                    let formatTime = now.toISOString().replace(/.\d+Z$/g, "Z").slice(0, - 4);
                     console.log(formatTime);
                     const hourTemperature = document.querySelector('#hourDegrees');
                     //Affichage de la température présente dans le tableau si les deux date sont identiques et si l'index de la temperature et l'index de l'heure sont identique pour avoir le changement de température toutes les heures
